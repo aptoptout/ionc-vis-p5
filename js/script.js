@@ -16,7 +16,7 @@ function draw() {
     background(255);
 
     switch(showThisNow) {
-        case 'open_piechart':
+        case 'openPieChart':
             open_piechart.display(windowHeight * 0.8, 244);
             break;
         default: 
