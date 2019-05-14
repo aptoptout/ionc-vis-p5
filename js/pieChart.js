@@ -5,9 +5,9 @@ class pieChart {
         this.currentName = tempName;
         this.sortedTagFreq = [];
 
-        console.log(this.data);
+        // console.log(this.data);
 
-        for(row in this.data) {
+        for(var row in this.data) {
             this.freqTags = this.data[row].tags.reduce(function (acc, curr) {
                 if (typeof acc[curr] == 'undefined') {
                     acc[curr] = 1;
@@ -18,22 +18,25 @@ class pieChart {
             }, {});
         }
         
-        for(tag in this.freqTags) {
+        for(var tag in this.freqTags) {
             this.sortedTagFreq.push([tag, this.freqTags[tag]]);
         }
 
         this.sortedTagFreq.sort(function(a, b) {
             return a[1] - b[1];
         });
+
+        console.log(sortedTagFreq);
     }
 
     display(tempDiameter, tempCol) {
         fill(255, 255, 0);
         ellipse(width/2, height/2, tempDiameter/2.5, tempDiameter/2.5);
-        // this.lastAngle = 0;
-        // this.index = 0;
 
-        // for(key in unique_freq_tagList.keySet()) {      
+        this.lastAngle = 0;
+        this.index = 0;
+
+        for(key in unique_freq_tagList.keySet()) {      
         //     this.value = unique_freq_tagList.get(key);
         //     this.mappedValue = map(value, 0, tableRows, 0, 360);      
         //     this.gray = map(value, 0, highestInt, 0, 255);
