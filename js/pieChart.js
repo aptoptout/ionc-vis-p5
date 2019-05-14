@@ -5,15 +5,11 @@ class pieChart {
         this.tagArray = [];
         this.sortedTagFreq = [];
 
-        // console.log(this.data);
-
         for(var row in this.data) {
             for(var tag in this.data[row].tags) {
                 this.tagArray.push(this.data[row].tags[tag]);
             }
         }
-
-        // console.log(this.tagArray);
 
         for(var tag in this.tagArray) {
             this.freqTags = this.tagArray.reduce(function (acc, curr) {
@@ -34,7 +30,7 @@ class pieChart {
             return a[1] - b[1];
         });
 
-        // console.log(this.sortedTagFreq);
+        this.highestInt = sortedTagFreq[sortedTagFreq.length - 1][1];
     }
 
     display(tempDiameter, tempCol) {
