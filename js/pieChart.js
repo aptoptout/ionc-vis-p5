@@ -3,9 +3,18 @@ class pieChart {
     constructor(tempJson, tempName) {
         this.data = tempJson;
         this.currentName = tempName;
+        this.tagArray = [];
         this.sortedTagFreq = [];
 
         // console.log(this.data);
+
+        for(var row in this.data) {
+            for(var tag in this.data[row].tags) {
+                this.tagArray.push(tag);
+            }
+        }
+
+        console.log(this.tagArray);
 
         for(var row in this.data) {
             this.freqTags = this.data[row].tags.reduce(function (acc, curr) {
@@ -36,7 +45,7 @@ class pieChart {
         this.lastAngle = 0;
         this.index = 0;
 
-        for(key in unique_freq_tagList.keySet()) {      
+        for(key in this.sortedTagFreq) {      
         //     this.value = unique_freq_tagList.get(key);
         //     this.mappedValue = map(value, 0, tableRows, 0, 360);      
         //     this.gray = map(value, 0, highestInt, 0, 255);
