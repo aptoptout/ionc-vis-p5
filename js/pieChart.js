@@ -53,7 +53,7 @@ class pieChart {
             noStroke();
             arc(width/2, height/2, tempDiameter, tempDiameter, this.lastAngle, this.lastAngle + radians(this.mappedValue));
             
-            pushMatrix();
+            push();
             translate((width/2) + x, (height/2) + y);
             
             if(x >= 0) {
@@ -70,18 +70,18 @@ class pieChart {
             } else {
                 text("  " + this.sortedTagFreq[key][0] + "  ", 0, 0);
             }
-            popMatrix();
+            pop();
             
             this.xLine = (tempDiameter/2) * cos(this.lastAngle+radians(this.mappedValue));
             this.yLine = (tempDiameter/2) * sin(this.lastAngle+radians(this.mappedValue));
             
-            pushMatrix();
+            push();
                 translate(width/2, height/2);
                 noFill();
                 stroke(255);
                 strokeWeight(2);
                 line(0, 0, this.xLine, this.yLine);
-            popMatrix();
+            pop();
             
             this.lastAngle += radians(this.mappedValue);
             this.index++;
