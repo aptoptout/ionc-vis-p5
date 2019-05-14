@@ -49,7 +49,7 @@ class pieChart {
             this.x = (tempDiameter/2) * cos(this.lastAngle+radians(this.mappedValue/2));
             this.y = (tempDiameter/2) * sin(this.lastAngle+radians(this.mappedValue/2));
 
-            fill(tempCol, 255, gray);
+            fill(tempCol, 255, this.gray);
             noStroke();
             arc(width/2, height/2, tempDiameter, tempDiameter, this.lastAngle, this.lastAngle + radians(this.mappedValue));
             
