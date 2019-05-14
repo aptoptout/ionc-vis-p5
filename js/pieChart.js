@@ -9,7 +9,8 @@ class pieChart {
         // console.log(this.data);
 
         for(var row in this.data) {
-            this.tagArray.push(this.data[row].tags);
+
+            this.tagArray.push.apply(this.data[row].tags);
         }
 
         console.log(this.tagArray);
