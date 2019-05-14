@@ -1,5 +1,4 @@
 class pieChart {
-
     constructor(tempJson, tempName) {
         this.data = tempJson;
         this.currentName = tempName;
@@ -84,7 +83,7 @@ class pieChart {
             pop();
             
             this.lastAngle += radians(this.mappedValue);
-            this.index + +;
+            this.index ++;
         }
         
         fill(255);

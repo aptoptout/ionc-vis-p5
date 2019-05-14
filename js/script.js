@@ -1,13 +1,13 @@
-var openset_piechart;
+let open_piechart;
 
 function setup() {
     let thisCanvas = createCanvas(windowWidth, windowHeight);
     thisCanvas.parent('this-canvas');
 
-    openset_piechart = new pieChart(open_data, "open set");
+    open_piechart = new pieChart(open_data, "open");
 }
 
 function draw() {
     background(255);
-    openset_piechart.display(400, 244);
+    open_piechart.display(400, 244);
 }
