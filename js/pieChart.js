@@ -39,7 +39,7 @@ class pieChart {
 
         for(key in this.sortedTagFreq) {      
             this.value = this.sortedTagFreq[key][1];
-            this.mappedValue = map(this.value, 0, this.tagArray.length, 10, 360);
+            this.mappedValue = map(this.value, 0, this.tagArray.length, 18, 360);
             this.gray = map(this.value, 0, this.highestInt, 0, 255);
             this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
             this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));

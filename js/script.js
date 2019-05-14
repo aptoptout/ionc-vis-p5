@@ -7,8 +7,8 @@ function setup() {
     open_piechart = new pieChart(open_data, "open");
 
     colorMode(HSB);
-    textSize(16);
-    textFont('Georgia');
+    textSize(12);
+    textFont('Courier');
 }
 
 function draw() {
