@@ -5,8 +5,10 @@ class pieChart {
         this.currentName = tempName;
         this.sortedTagFreq = [];
 
-        for(row in data) {
-            this.freqTags = data[row].tags.reduce(function (acc, curr) {
+        console.log(this.data);
+
+        for(row in this.data) {
+            this.freqTags = this.data[row].tags.reduce(function (acc, curr) {
                 if (typeof acc[curr] == 'undefined') {
                     acc[curr] = 1;
                 } else {
@@ -16,16 +18,18 @@ class pieChart {
             }, {});
         }
         
-        for(tag in freqTags) {
-            sortedTagFreq.push([tag, freqTags[tag]]);
+        for(tag in this.freqTags) {
+            this.sortedTagFreq.push([tag, this.freqTags[tag]]);
         }
 
-        sortedTagFreq.sort(function(a, b) {
+        this.sortedTagFreq.sort(function(a, b) {
             return a[1] - b[1];
         });
     }
 
     display(tempDiameter, tempCol) {
+        fill(255, 255, 0);
+        ellipse(width/2, height/2, tempDiameter/2.5, tempDiameter/2.5);
         // this.lastAngle = 0;
         // this.index = 0;
 
