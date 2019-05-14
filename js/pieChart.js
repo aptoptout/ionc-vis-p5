@@ -26,7 +26,7 @@ class pieChart {
             return a[1] - b[1];
         });
 
-        console.log(sortedTagFreq);
+        console.log(this.sortedTagFreq);
     }
 
     display(tempDiameter, tempCol) {
