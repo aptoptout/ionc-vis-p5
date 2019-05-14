@@ -1,10 +1,11 @@
 class pieChart {
-    
+
     constructor(tempJson, tempName) {
         this.data = tempJson;
         this.currentName = tempName;
         this.tagArray = [];
         this.sortedTagFreq = [];
+        this.numArticles = Object.keys(tempJson).length;
 
         for(var row in this.data) {
             for(var tag in this.data[row].tags) {
@@ -40,7 +41,7 @@ class pieChart {
 
         for(key in this.sortedTagFreq) {      
             this.value = this.sortedTagFreq[key][1];
-            this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
+            this.mappedValue = map(this.value, 0, this.numArticles, 0, 360);
             
             this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
             this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
@@ -76,7 +77,7 @@ class pieChart {
                 translate(width / 2, height / 2);
                 noFill();
                 stroke(255);
-                strokeWeight(2);
+                strokeWeight(1);
                 line(0, 0, this.xLine, this.yLine);
             pop();
             
