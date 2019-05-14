@@ -1,4 +1,5 @@
 let open_piechart;
+let showThisNow;
 
 function setup() {
     let thisCanvas = createCanvas(windowWidth, windowHeight);
@@ -14,7 +15,7 @@ function setup() {
 function draw() {
     background(255);
 
-    switch(showThis()) {
+    switch(showThisNow) {
         case 'open_piechart':
             open_piechart.display(windowHeight * 0.8, 244);
             break;
@@ -23,5 +24,6 @@ function draw() {
 }
 
 function showThis(publisher) {
-    return publisher;
+    console.log(publisher);
+    showThisNow = publisher;
 }
