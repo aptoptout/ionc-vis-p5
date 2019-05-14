@@ -13,5 +13,15 @@ function setup() {
 
 function draw() {
     background(255);
-    open_piechart.display(windowHeight * 0.8, 244);
+
+    switch(showThis()) {
+        case 'open_piechart':
+            open_piechart.display(windowHeight * 0.8, 244);
+            break;
+        default: 
+    }
+}
+
+function showThis(publisher) {
+    return publisher;
 }
