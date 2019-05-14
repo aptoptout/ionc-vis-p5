@@ -2,7 +2,7 @@ function setup() {
     let thisCanvas = createCanvas(600, 400);
     thisCanvas.parent('this-canvas');
 
-    new pieChart(tempJson, tempName);
+    new pieChart(openset_data, "open set");
 }
 
 function draw() {
