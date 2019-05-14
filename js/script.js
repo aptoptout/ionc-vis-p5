@@ -1,8 +1,11 @@
 function setup() {
     let thisCanvas = createCanvas(600, 400);
-    this.Canvas.parent('this-canvas');
+    thisCanvas.parent('this-canvas');
+
+    new pieChart(tempJson, tempName);
 }
 
 function draw() {
-    
+    background(0);
+    ellipse(width/2, height/2, 50, 50);
 }
