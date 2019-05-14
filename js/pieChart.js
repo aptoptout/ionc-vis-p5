@@ -76,7 +76,7 @@ class pieChart {
             
         //     lastAngle += radians(mappedValue);
         //     index++;
-        // }
+        }
         
         // fill(255);
         // noStroke();

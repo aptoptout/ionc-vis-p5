@@ -1,11 +1,13 @@
+var openset_piechart;
+
 function setup() {
     let thisCanvas = createCanvas(600, 400);
     thisCanvas.parent('this-canvas');
 
-    new pieChart(openset_data, "open set");
+    openset_piechart = new pieChart(openset_data, "open set");
 }
 
 function draw() {
     background(0);
-    ellipse(width/2, height/2, 50, 50);
+    openset_piechart.display(400, 244);
 }
