@@ -46,37 +46,37 @@ class pieChart {
             this.value = this.sortedTagFreq[key][1];
             this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
             this.gray = map(this.value, 0, this.highestInt, 0, 255);
-            this.x = (tempDiameter/2) * cos(this.lastAngle+radians(this.mappedValue/2));
-            this.y = (tempDiameter/2) * sin(this.lastAngle+radians(this.mappedValue/2));
+            this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
+            this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
 
             fill(tempCol, 255, this.gray);
             noStroke();
-            arc(width/2, height/2, tempDiameter, tempDiameter, this.lastAngle, this.lastAngle + radians(this.mappedValue));
+            arc(width / 2, height / 2, tempDiameter, tempDiameter, this.lastAngle, this.lastAngle + radians(this.mappedValue));
             
             push();
-            translate((width/2) + x, (height/2) + y);
-            
-            if(x >= 0) {
-                textAlign(RIGHT);
-                rotate(this.lastAngle+radians(this.mappedValue/2));
-            } else {
-                textAlign(LEFT);
-                rotate(this.lastAngle + radians((this.mappedValue)/2) + radians(180));
-            }
-            
-            fill(255, 0, 255);
-            if(this.sortedTagFreq[key][0] == "") {
-                text("  None  ", 0, 0);
-            } else {
-                text("  " + this.sortedTagFreq[key][0] + "  ", 0, 0);
-            }
+                translate((width / 2) + this.x, (height / 2) + this.y);
+                
+                if(this.x >= 0) {
+                    textAlign(RIGHT);
+                    rotate(this.lastAngle + radians(this.mappedValue / 2));
+                } else {
+                    textAlign(LEFT);
+                    rotate(this.lastAngle + radians((this.mappedValue) / 2) + radians(180));
+                }
+                
+                fill(255, 0, 255);
+                if(this.sortedTagFreq[key][0] == "") {
+                    text("  None  ", 0, 0);
+                } else {
+                    text("  " + this.sortedTagFreq[key][0] + "  ", 0, 0);
+                }
             pop();
             
-            this.xLine = (tempDiameter/2) * cos(this.lastAngle+radians(this.mappedValue));
-            this.yLine = (tempDiameter/2) * sin(this.lastAngle+radians(this.mappedValue));
+            this.xLine = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue));
+            this.yLine = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue));
             
             push();
-                translate(width/2, height/2);
+                translate(width / 2, height / 2);
                 noFill();
                 stroke(255);
                 strokeWeight(2);
@@ -84,12 +84,12 @@ class pieChart {
             pop();
             
             this.lastAngle += radians(this.mappedValue);
-            this.index++;
+            this.index + +;
         }
         
         fill(255);
         noStroke();
-        ellipse(width/2, height/2, tempDiameter/2.5, tempDiameter/2.5);
+        ellipse(width / 2, height / 2, tempDiameter / 2.5, tempDiameter / 2.5);
     }
     
 }
