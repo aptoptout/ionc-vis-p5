@@ -30,7 +30,7 @@ class pieChart {
             return a[1] - b[1];
         });
 
-        this.highestInt = sortedTagFreq[sortedTagFreq.length - 1][1];
+        this.highestInt = this.sortedTagFreq[this.sortedTagFreq.length - 1][1];
     }
 
     display(tempDiameter, tempCol) {
