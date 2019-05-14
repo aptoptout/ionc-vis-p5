@@ -12,5 +12,5 @@ function setup() {
 
 function draw() {
     background(255);
-    open_piechart.display(400, 244);
+    open_piechart.display(windowHeight * 0.8, 244);
 }
