@@ -8,6 +8,7 @@ function setup() {
 
     colorMode(HSB);
     textSize(16);
+    textFont('Georgia');
 }
 
 function draw() {
