@@ -14,10 +14,10 @@ class pieChart {
             }
         }
 
-        console.log(this.tagArray);
+        // console.log(this.tagArray);
 
-        for(var row in this.data) {
-            this.freqTags = this.data[row].tags.reduce(function (acc, curr) {
+        for(var tag in this.tagArray) {
+            this.freqTags = this.tagArray[tag].reduce(function (acc, curr) {
                 if (typeof acc[curr] == 'undefined') {
                     acc[curr] = 1;
                 } else {
