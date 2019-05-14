@@ -17,7 +17,7 @@ class pieChart {
         // console.log(this.tagArray);
 
         for(var tag in this.tagArray) {
-            this.freqTags = this.tagArray[tag].reduce(function (acc, curr) {
+            this.freqTags = this.tagArray.reduce(function (acc, curr) {
                 if (typeof acc[curr] == 'undefined') {
                     acc[curr] = 1;
                 } else {
