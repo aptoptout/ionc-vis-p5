@@ -35,61 +35,61 @@ class pieChart {
             return a[1] - b[1];
         });
 
-        console.log(this.sortedTagFreq);
+        // console.log(this.sortedTagFreq);
     }
 
     display(tempDiameter, tempCol) {
-        fill(255, 255, 0);
-        ellipse(width/2, height/2, tempDiameter/2.5, tempDiameter/2.5);
-
         this.lastAngle = 0;
         this.index = 0;
 
         for(key in this.sortedTagFreq) {      
-        //     this.value = unique_freq_tagList.get(key);
-        //     this.mappedValue = map(value, 0, tableRows, 0, 360);      
-        //     this.gray = map(value, 0, highestInt, 0, 255);
-        //     this.x = (tempDiameter/2) * cos(lastAngle+radians(mappedValue/2));
-        //     this.y = (tempDiameter/2) * sin(lastAngle+radians(mappedValue/2));
+            this.value = this.sortedTagFreq[key][1];
+            this.mappedValue = map(value, 0, this.tagArray.length(), 0, 360);
+            this.gray = map(value, 0, highestInt, 0, 255);
+            this.x = (tempDiameter/2) * cos(this.lastAngle+radians(this.mappedValue/2));
+            this.y = (tempDiameter/2) * sin(this.lastAngle+radians(this.mappedValue/2));
 
-        //     fill(tempCol, 255, gray);
-        //     noStroke();
-        //     arc(width/2, height/2, tempDiameter, tempDiameter, lastAngle, lastAngle + radians(mappedValue));
+            fill(tempCol, 255, gray);
+            noStroke();
+            arc(width/2, height/2, tempDiameter, tempDiameter, this.lastAngle, this.lastAngle + radians(this.mappedValue));
             
-        //     pushMatrix();
-        //     translate((width / 2) + x, (height / 2) + y);
+            pushMatrix();
+            translate((width/2) + x, (height/2) + y);
             
-        //     if(x >= 0) {
-        //         textAlign(RIGHT);
-        //         rotate(lastAngle+radians(mappedValue/2));
-        //     } else {
-        //         textAlign(LEFT);
-        //         rotate(lastAngle + radians((mappedValue) / 2) + radians(180));
-        //     }
+            if(x >= 0) {
+                textAlign(RIGHT);
+                rotate(this.lastAngle+radians(this.mappedValue/2));
+            } else {
+                textAlign(LEFT);
+                rotate(this.lastAngle + radians((this.mappedValue)/2) + radians(180));
+            }
             
-        //     fill(255, 0, 255);
-        //     if(key == "") text("  None  ", 0, 0);
-        //     else text("  " + key + "  ", 0, 0);
-        //     popMatrix();
+            fill(255, 0, 255);
+            if(this.sortedTagFreq[key][0] == "") {
+                text("  None  ", 0, 0);
+            } else {
+                text("  " + this.sortedTagFreq[key][0] + "  ", 0, 0);
+            }
+            popMatrix();
             
-        //     float xLine = (tempDiameter/2) * cos(lastAngle+radians(mappedValue));
-        //     float yLine = (tempDiameter/2) * sin(lastAngle+radians(mappedValue));
+            this.xLine = (tempDiameter/2) * cos(this.lastAngle+radians(this.mappedValue));
+            this.yLine = (tempDiameter/2) * sin(this.lastAngle+radians(this.mappedValue));
             
-        //     pushMatrix();
-        //     translate(width / 2, height / 2);
-        //     noFill();
-        //     stroke(255);
-        //     strokeWeight(2);
-        //     line(0, 0, xLine, yLine);
-        //     popMatrix();
+            pushMatrix();
+                translate(width/2, height/2);
+                noFill();
+                stroke(255);
+                strokeWeight(2);
+                line(0, 0, this.xLine, this.yLine);
+            popMatrix();
             
-        //     lastAngle += radians(mappedValue);
-        //     index++;
+            this.lastAngle += radians(this.mappedValue);
+            this.index++;
         }
         
-        // fill(255);
-        // noStroke();
-        // ellipse(width/2, height/2, tempDiameter/2.5, tempDiameter/2.5);
+        fill(255);
+        noStroke();
+        ellipse(width/2, height/2, tempDiameter/2.5, tempDiameter/2.5);
     }
     
 }
