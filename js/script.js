@@ -17,7 +17,7 @@ function draw() {
 
     switch(showThisNow) {
         case 'openPieChart':
-            open_piechart.display(windowHeight * 0.8, 244);
+            open_piechart.display(windowHeight * 0.9, 244);
             break;
         default: 
     }
