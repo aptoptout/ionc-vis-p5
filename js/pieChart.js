@@ -51,8 +51,8 @@ class pieChart {
                     noFill();
                     stroke(tempCol, 255, this.gray);
                     strokeWeight(2);
-                    line(((tempDiameter * 0.75) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2)), 
-                         ((tempDiameter * 0.75) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2)), 
+                    line(0, 
+                         0, 
                          (tempDiameter) * cos(this.lastAngle + radians(this.mappedValue)), 
                          (tempDiameter) * sin(this.lastAngle + radians(this.mappedValue)));
                 pop();
@@ -88,8 +88,8 @@ class pieChart {
             this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
 
             if(this.mappedValue < 2.5) {
-                this.x = ((tempDiameter * 0.75) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
-                this.y = ((tempDiameter * 0.75) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
+                this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
+                this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
             } else {
                 this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
                 this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
