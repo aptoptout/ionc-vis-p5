@@ -19,7 +19,6 @@ p, h2, h1, a {
 
 h1 {
     font-weight: bold;
-    color: rgba(0, 0, 255, 1);
 }
 
 h2 {
@@ -43,7 +42,7 @@ h2 {
     color: rgba(127,0,255,1);
 }
 
-button {
+button, button:focus {
     border: none;
     padding: 6px;
     border-radius: 3px;
@@ -53,6 +52,11 @@ button {
     font-family: 'libre baskerville',serif;
     font-size: 12px;
     line-height: 12px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(127,0,255,0.4);
 }
 
 #this-canvas {
