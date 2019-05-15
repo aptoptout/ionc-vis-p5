@@ -42,7 +42,7 @@ class pieChart {
             this.value = this.sortedTagFreq[key][1];
             this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
 
-            if(this.mappedValue < 15) {
+            if(this.mappedValue < 5) {
                 this.x = ((tempDiameter * 0.5) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
                 this.y = ((tempDiameter * 0.5) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
             } else {
@@ -66,8 +66,12 @@ class pieChart {
                     rotate(this.lastAngle + radians((this.mappedValue) / 2) + radians(180));
                 }
                 
-                fill(255, 0, 255);
-                
+                if(this.mappedValue < 5) {
+                    fill(tempCol, 255, this.gray);
+                } else {
+                    fill(255, 0, 255);
+                }
+
                 if(this.sortedTagFreq[key][0] == "") {
                     text("  None  ", 0, 0);
                 } else {
