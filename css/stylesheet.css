@@ -19,6 +19,7 @@ p, h2, h1, a {
 
 h1 {
     font-weight: bold;
+    color: rgba(0, 0, 255, 1);
 }
 
 h2 {
@@ -40,6 +41,18 @@ h2 {
 
     background-color: rgba(0,0,255,0.05);
     color: rgba(127,0,255,1);
+}
+
+button {
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    margin: 4px 0;
+    color: rgba(127,0,255,1);
+    background-color: rgba(127,0,255,0.25);
+    font-family: 'libre baskerville',serif;
+    font-size: 12px;
+    line-height: 12px;
 }
 
 #this-canvas {
