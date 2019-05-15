@@ -50,11 +50,11 @@ class pieChart {
                     translate(width / 2, height / 2);
                     noFill();
                     stroke(tempCol, 255, this.gray);
-                    strokeWeight(2);
+                    strokeWeight(1);
                     line(0, 
                          0, 
-                         (tempDiameter) * cos(this.lastAngle + radians(this.mappedValue)), 
-                         (tempDiameter) * sin(this.lastAngle + radians(this.mappedValue)));
+                         (tempDiameter * 0.55) * cos(this.lastAngle + radians(this.mappedValue)), 
+                         (tempDiameter * 0.55) * sin(this.lastAngle + radians(this.mappedValue)));
                 pop();
             } else {
                 this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
