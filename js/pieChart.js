@@ -41,9 +41,17 @@ class pieChart {
             this.value = this.sortedTagFreq[key][1];
             this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
 
-            if(this.mappedValue < 3) {
+            if(this.mappedValue < 2.5) {
                 this.x = ((tempDiameter * 0.5) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
                 this.y = ((tempDiameter * 0.5) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
+
+                push();
+                    translate(width / 2, height / 2);
+                    line(((tempDiameter * 0.75) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2)), 
+                         ((tempDiameter * 0.75) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2)), 
+                         (tempDiameter) * cos(this.lastAngle + radians(this.mappedValue)), 
+                         (tempDiameter) * sin(this.lastAngle + radians(this.mappedValue)));
+                pop();
             } else {
                 this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
                 this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
@@ -76,9 +84,9 @@ class pieChart {
             this.value = this.sortedTagFreq[key][1];
             this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
 
-            if(this.mappedValue < 3) {
-                this.x = ((tempDiameter * 1.1) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
-                this.y = ((tempDiameter * 1.1) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
+            if(this.mappedValue < 2.5) {
+                this.x = ((tempDiameter * 0.75) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
+                this.y = ((tempDiameter * 0.75) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
             } else {
                 this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
                 this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
@@ -89,7 +97,7 @@ class pieChart {
             push();
                 translate((width / 2) + this.x, (height / 2) + this.y);
                 
-                if(this.mappedValue < 3) {
+                if(this.mappedValue < 2.5) {
                     if(this.x >= 0) {
                         textAlign(LEFT);
                         rotate(this.lastAngle + radians(this.mappedValue / 2));
