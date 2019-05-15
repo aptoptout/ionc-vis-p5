@@ -22,7 +22,7 @@ function draw() {
             amateurcities_piechart.display(windowHeight * 0.9, 170);
             break;
         case 'openPieChart':
-            open_piechart.display(windowHeight * 0.9, 244);
+            open_piechart.display(windowHeight * 0.9, 69);
             break;
         default: 
     }
