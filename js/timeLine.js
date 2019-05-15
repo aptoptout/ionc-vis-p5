@@ -4,7 +4,7 @@ class timeLine {
         // this.numArticles = Object.keys(tempJson).length;
     }
 
-    function display(tempDiameter, tempCol) {
+    display(tempDiameter, tempCol) {
         //
     }
 
