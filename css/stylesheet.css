@@ -42,7 +42,7 @@ h2 {
     color: rgba(127,0,255,1);
 }
 
-button, button:focus {
+button, button:active {
     border: none;
     padding: 6px;
     border-radius: 3px;
