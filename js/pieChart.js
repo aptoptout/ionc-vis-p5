@@ -53,11 +53,37 @@ class pieChart {
             fill(tempCol, 255, this.gray);
             noStroke();
             arc(width / 2, height / 2, tempDiameter, tempDiameter, this.lastAngle, this.lastAngle + radians(this.mappedValue));
-
-            fill(255);
-            noStroke();
-            ellipse(width / 2, height / 2, tempDiameter / 2.5, tempDiameter / 2.5);
             
+            this.xLine = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue));
+            this.yLine = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue));
+            
+            push();
+                translate(width / 2, height / 2);
+                noFill();
+                stroke(255);
+                strokeWeight(1);
+                line(0, 0, this.xLine, this.yLine);
+            pop();
+            
+            this.lastAngle += radians(this.mappedValue);
+        }
+
+        fill(255);
+        noStroke();
+        ellipse(width / 2, height / 2, tempDiameter / 2.5, tempDiameter / 2.5);
+
+        for(key in this.sortedTagFreq) {      
+            this.value = this.sortedTagFreq[key][1];
+            this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
+
+            if(this.mappedValue < 3) {
+                this.x = ((tempDiameter * 0.5) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
+                this.y = ((tempDiameter * 0.5) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
+            } else {
+                this.x = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
+                this.y = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
+            }
+
             push();
                 translate((width / 2) + this.x, (height / 2) + this.y);
                 
@@ -81,18 +107,7 @@ class pieChart {
                     text("  " + this.sortedTagFreq[key][0] + "  ", 0, 0);
                 }
             pop();
-            
-            this.xLine = (tempDiameter / 2) * cos(this.lastAngle + radians(this.mappedValue));
-            this.yLine = (tempDiameter / 2) * sin(this.lastAngle + radians(this.mappedValue));
-            
-            push();
-                translate(width / 2, height / 2);
-                noFill();
-                stroke(255);
-                strokeWeight(1);
-                line(0, 0, this.xLine, this.yLine);
-            pop();
-            
+                        
             this.lastAngle += radians(this.mappedValue);
         }
         
