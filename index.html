@@ -11,13 +11,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
     <script src="js/data/open_2019-04-03-212438.js"></script>
     <script src="js/data/openset_2019-04-03-212558.js"></script>
+    <script src="js/timeLine.js"></script>
     <script src="js/pieChart.js"></script>
     <script src="js/script.js"></script>
   </head>
   <body>
     <div id="info-column" class="show">
       <h1>
-        _make it public: visualizations
+        MAKE IT PUBLIC/ <br/> visualizations
       </h1>
       <p>
         Use buttons below to show visualizations of certain publisher. If you want to download the image click export.
@@ -26,7 +27,7 @@
         <h2>
           Amateur Cities
         </h2>
-        <button class="piechart pub-button" data-name="amateurcities" onclick="">pie chart</button>
+        <button class="piechart pub-button" data-name="amateurcities" onclick="showThis('amateurcitiesPieChart')">pie chart</button>
         <button class="timeline pub-button" data-name="amateurcities" onclick="">timeline</button>
         <button class="wordfrequency pub-button" data-name="amateurcities" onclick="">word frequency</button>
       </div>
