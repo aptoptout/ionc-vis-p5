@@ -7,7 +7,7 @@ function setup() {
     thisCanvas.parent('this-canvas');
 
     open_piechart          = new pieChart(open_data, "open");
-    amateurcities_piechart = new pieChart(open_data, "amateur cities");
+    amateurcities_piechart = new pieChart(amateurcities_data, "amateur cities");
 
     colorMode(HSB, 255, 255, 255);
     textSize(10);
