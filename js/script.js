@@ -11,7 +11,7 @@ function setup() {
 
     colorMode(HSB, 255, 255, 255);
     textSize(10);
-    textLeading(10);
+    textLeading(8);
     textFont('Courier');
 }
 

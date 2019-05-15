@@ -36,13 +36,12 @@ class pieChart {
 
     display(tempDiameter, tempCol) {
         this.lastAngle = 0;
-        // this.index = 0;
 
         for(key in this.sortedTagFreq) {      
             this.value = this.sortedTagFreq[key][1];
             this.mappedValue = map(this.value, 0, this.tagArray.length, 0, 360);
 
-            if(this.mappedValue < 5) {
+            if(this.mappedValue < 3) {
                 this.x = ((tempDiameter * 0.5) / 2) * cos(this.lastAngle + radians(this.mappedValue / 2));
                 this.y = ((tempDiameter * 0.5) / 2) * sin(this.lastAngle + radians(this.mappedValue / 2));
             } else {
@@ -54,6 +53,10 @@ class pieChart {
             fill(tempCol, 255, this.gray);
             noStroke();
             arc(width / 2, height / 2, tempDiameter, tempDiameter, this.lastAngle, this.lastAngle + radians(this.mappedValue));
+
+            fill(255);
+            noStroke();
+            ellipse(width / 2, height / 2, tempDiameter / 2.5, tempDiameter / 2.5);
             
             push();
                 translate((width / 2) + this.x, (height / 2) + this.y);
@@ -66,7 +69,7 @@ class pieChart {
                     rotate(this.lastAngle + radians((this.mappedValue) / 2) + radians(180));
                 }
                 
-                if(this.mappedValue < 5) {
+                if(this.mappedValue < 3) {
                     fill(tempCol, 255, this.gray);
                 } else {
                     fill(255, 0, 255);
@@ -91,12 +94,8 @@ class pieChart {
             pop();
             
             this.lastAngle += radians(this.mappedValue);
-            // this.index ++;
         }
         
-        fill(255);
-        noStroke();
-        ellipse(width / 2, height / 2, tempDiameter / 2.5, tempDiameter / 2.5);
     }
     
 }
