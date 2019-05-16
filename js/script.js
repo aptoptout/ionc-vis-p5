@@ -1,5 +1,13 @@
-let open_piechart;
+// pie charts
 let amateurcities_piechart;
+let open_piechart;
+let openset_piechart;
+let unstudio_piechart;
+
+// timelines
+let amateurcities_timeline;
+let open_timeline;
+
 let showThisNow;
 
 function setup() {
@@ -10,8 +18,8 @@ function setup() {
     amateurcities_piechart = new pieChart(amateurcities_data, "amateur cities");
 
     colorMode(HSB, 255, 255, 255);
-    textSize(10);
-    textLeading(12);
+    textSize(8);
+    textLeading(10);
     textFont('Courier');
 }
 
@@ -24,6 +32,10 @@ function draw() {
             break;
         case 'openPieChart':
             open_piechart.display(windowHeight * 0.9, 69);
+            break;
+        case 'openSetPieChart':
+            break;
+        case 'unstudioPieChart':
             break;
         default: 
     }
