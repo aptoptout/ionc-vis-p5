@@ -1,0 +1,9 @@
+class wordFequency {
+    constructor() {
+
+    }
+
+    display() {
+    
+    }
+}
