@@ -22,7 +22,7 @@ function setup() {
     open_timeline          = new timeLine(open_data);
     amateurcities_timeline = new timeLine(amateurcities_data);
 
-    colorMode(HSB, 255, 255, 255);
+    colorMode(HSB, 255, 255, 255, 255);
     textSize(8);
     textLeading(10);
     textFont('Courier');

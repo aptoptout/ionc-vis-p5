@@ -37,11 +37,13 @@ class timeLine {
         this.trueLastPost = 0;
         this.index = 0;
 
-        noStroke();
-        fill(tempCol, 255, 0);
-        textSize(18);
-        text("Total articles: " + this.dateArray.length, ((width - tempDiameter) / 2) + 6, ((height - (tempDiameter/1.5)) / 2) - 10);
-        
+        push();
+            noStroke();
+            fill(tempCol, 255, 0);
+            textSize(18);
+            text("Total articles: " + this.dateArray.length, ((width - tempDiameter) / 2) + 6, ((height - (tempDiameter/1.5)) / 2) - 10);
+        pop();
+                
         stroke(tempCol, 255, 0);
         noFill();
         beginShape();
