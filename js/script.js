@@ -43,10 +43,10 @@ function draw() {
         case 'unstudioPieChart':
             break;
         case 'amateurcitiesTimeLine':
-            amateurcities_timeline.display(windowHeight * 0.9, 170);
+            amateurcities_timeline.display(windowWidth * 0.9, 170);
             break;
         case 'openTimeLine':
-            open_timeline.display(windowHeight * 0.9, 69);
+            open_timeline.display(windowWidth * 0.9, 69);
             break;
         default: 
     }
