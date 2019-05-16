@@ -52,7 +52,7 @@ class timeLine {
         endShape();
 
         for(key in this.sortedDateFreq) {
-            this.amountArticles = sortedDateFreq[key][1];
+            this.amountArticles = this.sortedDateFreq[key][1];
             this.mappedValue = map(this.amountArticles, 0, this.dateArray.length, 0, tempDiameter);
             this.gray = map(this.amountArticles, 0, this.highestInt, 0, 255);
             this.articleWidth = this.mappedValue / this.amountArticles;
@@ -68,7 +68,7 @@ class timeLine {
                 translate(((width - tempDiameter) / 2) + (this.lastPosition + 18), ((height - (tempDiameter/1.5)) / 2) + 6);
                 rotate(-HALF_PI);
                 fill(tempCol, 255, this.gray, 255);
-                text(sortedDateFreq[key][0] + ": " + int(this.amountArticles) + " article(s)", 0, 0);
+                text(this.sortedDateFreq[key][0] + ": " + int(this.amountArticles) + " article(s)", 0, 0);
             pop();
 
             for(var i = 0; i < this.amountArticles; i++) {
