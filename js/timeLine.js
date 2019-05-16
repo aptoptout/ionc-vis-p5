@@ -77,7 +77,7 @@ class timeLine {
 
                 push();
                     textSize(10);
-                    translate(((width - tempDiameter) / 2) + this.lastPosition + (this.articleWidth/2), y);
+                    translate(((width - tempDiameter) / 2) + this.lastPosition + (this.articleWidth/2), this.y);
                     textAlign(CENTER);
                     text(this.calculateWordCount(i), this.x, 0);
                     strokeWeight(5);
