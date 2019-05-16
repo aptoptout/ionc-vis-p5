@@ -92,7 +92,7 @@ class timeLine {
                 stroke(129, 31);
                 translate(((width - tempDiameter) / 2) + this.lastPosition + (this.articleWidth/2), 0);
                 beginShape();
-                    for(int i = 0; i < this.amountArticles; i++) {
+                    for(var i = 0; i < this.amountArticles; i++) {
                         vertex(this.graphPoints[i].x, this.graphPoints[i].y);
                     }
                 endShape();
