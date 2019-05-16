@@ -73,13 +73,13 @@ class timeLine {
 
             for(var i = 0; i < this.amountArticles; i++) {
                 this.x = map(i, 0, this.amountArticles, 0, this.mappedValue);
-                this.y = map(calculateWordCount(i), 0, 12000, tempDiameter/1.5 + ((height - (tempDiameter/1.5)) / 2), (height - (tempDiameter/1.5)) / 2);
+                this.y = map(this.calculateWordCount(i), 0, 12000, tempDiameter/1.5 + ((height - (tempDiameter/1.5)) / 2), (height - (tempDiameter/1.5)) / 2);
 
                 push();
                     textSize(10);
                     translate(((width - tempDiameter) / 2) + this.lastPosition + (this.articleWidth/2), y);
                     textAlign(CENTER);
-                    text(calculateWordCount(i), this.x, 0);
+                    text(this.calculateWordCount(i), this.x, 0);
                     strokeWeight(5);
                     point(this.x, 4);
                     this.graphPoints[i] = createVector(this.x, 4 + this.y);
