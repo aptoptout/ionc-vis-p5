@@ -14,8 +14,13 @@ function setup() {
     let thisCanvas = createCanvas(windowWidth, windowHeight);
     thisCanvas.parent('this-canvas');
 
+    // pie charts
     open_piechart          = new pieChart(open_data, "open");
     amateurcities_piechart = new pieChart(amateurcities_data, "amateur cities");
+
+    // timeline
+    open_timeline          = new timeLine(open_data);
+    amateurcities_timeline = new timeLine(amateurcities_data);
 
     colorMode(HSB, 255, 255, 255);
     textSize(8);
@@ -36,6 +41,12 @@ function draw() {
         case 'openSetPieChart':
             break;
         case 'unstudioPieChart':
+            break;
+        case 'amateurcitiesTimeLine':
+            amateurcities_timeline.display(windowHeight * 0.9, 170);
+            break;
+        case 'openTimeLine':
+            open_timeline.display(windowHeight * 0.9, 69);
             break;
         default: 
     }
