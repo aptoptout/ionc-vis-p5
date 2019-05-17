@@ -6,8 +6,8 @@ class wordFrequency {
 
         switch(numWords) {
             case'1':
-                for(row in this.data) {
-                    for(words in this.data[row]["word-freq"]) {
+                for(var row in this.data) {
+                    for(var words in this.data[row]["word-freq"]) {
                         let word  = this.data[row]["word-freq"][words][0];
                         let freq  = this.data[row]["word-freq"][words][1];
                         // let relav = this.data[row]["word-freq"][words][2];
