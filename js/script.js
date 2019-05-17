@@ -15,8 +15,8 @@ function setup() {
     thisCanvas.parent('this-canvas');
 
     // pie charts
-    open_piechart          = new pieChart(open_data, "open");
-    amateurcities_piechart = new pieChart(amateurcities_data, "amateur cities");
+    open_piechart          = new pieChart(open_data);
+    amateurcities_piechart = new pieChart(amateurcities_data);
 
     // timeline
     open_timeline          = new timeLine(open_data);

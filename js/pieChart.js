@@ -1,8 +1,7 @@
 class pieChart {
 
-    constructor(tempJson, tempName) {
+    constructor(tempJson) {
         this.data = tempJson;
-        this.currentName = tempName;
         this.tagArray = [];
         this.sortedTagFreq = [];
 
