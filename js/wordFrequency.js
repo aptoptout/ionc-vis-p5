@@ -15,14 +15,14 @@ class wordFrequency {
                         // let relav = this.data[row]["word-freq"][words][2];
                         // console.log(word, freq);
                         this.freqArray.push([word, freq]);
-
-                        this.freqArray.sort(function(a, b) {
-                            return a[1] - b[1];
-                        });
-
-                        this.highestInt = this.freqArray[this.freqArray.length - 1][1];
                     }
                 }
+
+                this.freqArray.sort(function(a, b) {
+                    return a[1] - b[1];
+                });
+
+                this.highestInt = this.freqArray[this.freqArray.length - 1][1];
 
                 if(this.notLogged) {
                     console.log(this.freqArray);
