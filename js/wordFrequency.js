@@ -22,10 +22,13 @@ class wordFrequency {
                     return a[1] - b[1];
                 });
 
-                this.highestInt = this.freqArray[this.freqArray.length - 1][1];
+                this.freqArray.reverse();
+
+                this.highestInt = this.freqArray[0][1];
 
                 if(this.notLogged) {
                     console.log(this.freqArray);
+                    console.log(this.highestInt);
                     this.notLogged = false;
                 }
 
