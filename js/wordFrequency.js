@@ -1,8 +1,8 @@
 class wordFrequency {
     constructor(tempJson, numWords) {
-        this.data           = tempJson;
-        this.freqArray      = [];
-        this.highestInt     = 0;
+        this.data = tempJson;
+        this.freqArray = [];
+        this.highestInt = 0;
 
         switch(numWords) {
             case'1':
@@ -11,7 +11,7 @@ class wordFrequency {
                         let word  = this.data[row]["word-freq"][words][0];
                         let freq  = this.data[row]["word-freq"][words][1];
                         // let relav = this.data[row]["word-freq"][words][2];
-
+                        console.log(word, freq);
                         this.freqArray.push([word, freq]);
 
                         this.freqArray.sort(function(a, b) {
@@ -21,6 +21,7 @@ class wordFrequency {
                         this.highestInt = this.freqArray[this.freqArray.length - 1][1];
                     }
                 }
+                console.log(freqArray);
                 break;
             case'2':
                 break;
@@ -29,8 +30,6 @@ class wordFrequency {
             default:
                 break;
         }
-
-        console.log(freqArray);
     }
 
     display() {
