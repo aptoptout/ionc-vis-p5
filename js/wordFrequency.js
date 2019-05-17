@@ -4,7 +4,7 @@ class wordFrequency {
         this.freqArray = [];
         this.highestInt = 0;
 
-        notLogged = true;
+        this.notLogged = true;
 
         switch(numWords) {
             case'1':
@@ -24,9 +24,9 @@ class wordFrequency {
                     }
                 }
 
-                if(notLogged) {
+                if(this.notLogged) {
                     console.log(this.freqArray);
-                    notLogged = false;
+                    this.notLogged = false;
                 }
 
                 break;
