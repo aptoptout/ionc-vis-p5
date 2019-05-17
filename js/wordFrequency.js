@@ -11,7 +11,7 @@ class wordFrequency {
                         let word  = this.data[row]["word-freq"][words][0];
                         let freq  = this.data[row]["word-freq"][words][1];
                         // let relav = this.data[row]["word-freq"][words][2];
-                        console.log(word, freq);
+                        // console.log(word, freq);
                         this.freqArray.push([word, freq]);
 
                         this.freqArray.sort(function(a, b) {
