@@ -47,8 +47,8 @@ class wordFrequency {
         if(this.freqArray.length > 20) {
             for(var i = 0; i < 20; i++) {
                 this.pos  = map(i, 0, 20, 0, tempDiameter);
-                this.high = map(freqArray[i][1], 0, this.highestInt, 0, tempDiameter/1.5);
-                this.gray = map(freqArray[i][1], 0, this.highestInt, 0, 255);
+                this.high = map(this.freqArray[i][1], 0, this.highestInt, 0, tempDiameter/1.5);
+                this.gray = map(this.freqArray[i][1], 0, this.highestInt, 0, 255);
                 this.barWidth = (tempDiameter) / 20;
 
                 push();
@@ -57,16 +57,16 @@ class wordFrequency {
                     stroke(255);
                     // textSize(10);
                     textAlign(CENTER);
-                    text(freqArray[i][0], this.pos + (this.barWidth/2), 20);
+                    text(this.freqArray[i][0], this.pos + (this.barWidth/2), 20);
                     rect(this.pos, 0, this.barWidth, -this.high);
-                    text(freqArray[i][1], this.pos + (this.barWidth/2), -this.high-20);
+                    text(this.freqArray[i][1], this.pos + (this.barWidth/2), -this.high-20);
                 pop();
             }
         } else {
-            for(var i = 0; i < freqArray.length; i++) {
+            for(var i = 0; i < this.freqArray.length; i++) {
                 this.pos  = map(i, 0, 20, 0, tempDiameter);
-                this.high = map(freqArray[i][1], 0, this.highestInt, 0, tempDiameter/1.5);
-                this.gray = map(freqArray[i][1], 0, this.highestInt, 0, 255);
+                this.high = map(this.freqArray[i][1], 0, this.highestInt, 0, tempDiameter/1.5);
+                this.gray = map(this.freqArray[i][1], 0, this.highestInt, 0, 255);
                 this.barWidth = (tempDiameter) / 20;
 
                 push();
@@ -75,9 +75,9 @@ class wordFrequency {
                     stroke(255);
                     // textSize(10);
                     textAlign(CENTER);
-                    text(freqArray[i][0], this.pos + (this.barWidth/2), 20);
+                    text(this.freqArray[i][0], this.pos + (this.barWidth/2), 20);
                     rect(this.pos, 0, this.barWidth, -this.high);
-                    text(freqArray[i][1], this.pos + (this.barWidth/2), -this.high-20);
+                    text(this.freqArray[i][1], this.pos + (this.barWidth/2), -this.high-20);
                 pop();
             }
         }
