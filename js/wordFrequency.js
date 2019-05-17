@@ -28,6 +28,7 @@ class wordFrequency {
             case'3':
                 break;
             default:
+                console.log("No number passed!");
                 break;
         }
     }

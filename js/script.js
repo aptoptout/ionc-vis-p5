@@ -57,10 +57,10 @@ function draw() {
             open_timeline.display(windowWidth * 0.75, 69);
             break;
         case 'amateurcities1WordFreq':
-            amateurcities_timeline.display(windowWidth * 0.75, 170);
+            // amateurcities_timeline.display(windowWidth * 0.75, 170);
             break;
         case 'open1WordFreq':
-            open_timeline.display(windowWidth * 0.75, 69);
+            // open_timeline.display(windowWidth * 0.75, 69);
             break;
         default: 
     }
