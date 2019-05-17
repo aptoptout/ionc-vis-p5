@@ -27,8 +27,8 @@ function setup() {
     open_timeline          = new timeLine(open_data);
 
     // word frequencies
-    amateurcities_1wordfreq = new wordFrequency(amateurcities_data, 1);
-    open_1wordfreq          = new wordFrequency(open_data, 1);
+    amateurcities_1wordfreq = new wordFrequency(amateurcities_data, '1');
+    open_1wordfreq          = new wordFrequency(open_data, '1');
 
     colorMode(HSB, 255, 255, 255, 255);
     textSize(8);
