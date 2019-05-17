@@ -21,7 +21,7 @@ class wordFrequency {
                         this.highestInt = this.freqArray[this.freqArray.length - 1][1];
                     }
                 }
-                console.log(freqArray);
+                console.log(this.freqArray);
                 break;
             case'2':
                 break;
