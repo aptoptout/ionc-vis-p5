@@ -1,4 +1,4 @@
-class wordFequency {
+class wordFrequency {
     constructor(tempJson, numWords) {
         this.data           = tempJson;
         this.freqArray      = [];
