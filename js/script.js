@@ -8,6 +8,10 @@ let unstudio_piechart;
 let amateurcities_timeline;
 let open_timeline;
 
+// word frequencies
+let amateurcities_1wordfreq;
+let open_1wordfreq;
+
 let showThisNow;
 
 function setup() {
@@ -15,12 +19,16 @@ function setup() {
     thisCanvas.parent('this-canvas');
 
     // pie charts
-    open_piechart          = new pieChart(open_data);
     amateurcities_piechart = new pieChart(amateurcities_data);
+    open_piechart          = new pieChart(open_data);
 
-    // timeline
-    open_timeline          = new timeLine(open_data);
+    // timelines
     amateurcities_timeline = new timeLine(amateurcities_data);
+    open_timeline          = new timeLine(open_data);
+
+    // word frequencies
+    amateurcities_1wordfreq = new wordFrequency(amateurcities_data, 1);
+    open_1wordfreq          = new wordFrequency(open_data, 1);
 
     colorMode(HSB, 255, 255, 255, 255);
     textSize(8);
@@ -46,6 +54,12 @@ function draw() {
             amateurcities_timeline.display(windowWidth * 0.75, 170);
             break;
         case 'openTimeLine':
+            open_timeline.display(windowWidth * 0.75, 69);
+            break;
+        case 'amateurcities1WordFreq':
+            amateurcities_timeline.display(windowWidth * 0.75, 170);
+            break;
+        case 'open1WordFreq':
             open_timeline.display(windowWidth * 0.75, 69);
             break;
         default: 
