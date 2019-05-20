@@ -26,9 +26,13 @@ class wordFrequency {
 
                 this.highestInt = this.freqArray[0][1];
 
+                this.dictionary = this.freqArray.map(function(val) {
+                    return {[val[0]] : [val[1]]}
+                });
+
                 if(this.notLogged) {
-                    console.log(this.freqArray);
-                    console.log(this.highestInt);
+                    console.log(this.dictionary);
+                    // console.log(this.highestInt);
                     this.notLogged = false;
                 }
 

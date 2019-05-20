@@ -12,6 +12,9 @@ let open_timeline;
 let amateurcities_1wordfreq;
 let open_1wordfreq;
 
+// word overlap frequency
+let word_overlap;
+
 let showThisNow;
 
 function setup() {
@@ -29,6 +32,9 @@ function setup() {
     // word frequencies
     amateurcities_1wordfreq = new wordFrequency(amateurcities_data, '1');
     open_1wordfreq          = new wordFrequency(open_data, '1');
+
+    // word overlap frequency
+    word_overlap            = new wordOverlap(amateurcities_1wordfreq, open_1wordfreq);
 
     colorMode(HSB, 255, 255, 255, 255);
     textSize(8);
@@ -61,6 +67,9 @@ function draw() {
             break;
         case 'open1WordFreq':
             open_1wordfreq.display(windowWidth * 0.75, 69);
+            break;
+        case 'wordOverlap':
+            word_overlap.display(windowWidth * 0.75, 69);
             break;
         default: 
     }
