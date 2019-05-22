@@ -11,7 +11,7 @@ class wordOverlap {
         if(this.eval == false) {
             for(var key in _objAm.freqArray) {
                 for(var val in _objOp.freqArray) {
-                    if(_objAm.freqArray[key][0] == _objOp.freqArray[val][0]) {
+                    if(1 == 0) {
                         this.totalDict[_objAm.freqArray[key][0]] = _objAm.freqArray[key][1];
                     }
                 }
