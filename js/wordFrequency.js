@@ -2,6 +2,8 @@ class wordFrequency {
     constructor(tempJson, numWords) {
         this.data = tempJson;
         this.freqArray = [];
+        this.wordsArray = [];
+
         this.highestInt = 0;
 
         this.notLogged = true;
@@ -15,6 +17,7 @@ class wordFrequency {
                         // let relav = this.data[row]["word-freq"][words][2];
                         // console.log(word, freq);
                         this.freqArray.push([word, freq]);
+                        this.wordsArray.push(word);
                     }
                 }
 
