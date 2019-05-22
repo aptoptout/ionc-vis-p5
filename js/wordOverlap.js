@@ -8,8 +8,10 @@ class wordOverlap {
         // this.unstudioData      = _objUn.freqArray;
 
         for(var key in _objAm.freqArray) {
-            if(this.totalDict.hasOwnProperty(_objAm.freqArray[key][0]) || _objOp.freqArray[0][0]) {
-                this.totalDict[key] = _objAm.freqArray[key][1];
+            for(var val in _objOp.freqArray) {
+                if(_objAm.freqArray[key][0] == _objOp.freqArray[val][0] || this.totalDict.hasOwnProperty(_objAm.freqArray[key][0])) {
+                    this.totalDict[_objAm.freqArray[key][0]] = _objAm.freqArray[key][1];
+                }
             }
         }
 
