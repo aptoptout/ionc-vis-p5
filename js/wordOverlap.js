@@ -2,20 +2,24 @@ class wordOverlap {
     constructor(_objAm, _objOp) {
         this.totalDict = {};
         this.sortedWordFreq = [];
+        this.eval = false;
         // this.amateurcitiesData = _objAm.freqArray;
         // this.openData          = _objOp.freqArray;
         // this.opensetData       = _objOpSe.freqArray;
         // this.unstudioData      = _objUn.freqArray;
 
-        for(var key in _objAm.freqArray) {
-            for(var val in _objOp.freqArray) {
-                if(_objAm.freqArray[key][0] == _objOp.freqArray[val][0]) {
-                    this.totalDict[_objAm.freqArray[key][0]] = _objAm.freqArray[key][1];
+        if(this.eval == false) {
+            for(var key in _objAm.freqArray) {
+                for(var val in _objOp.freqArray) {
+                    if(_objAm.freqArray[key][0] == _objOp.freqArray[val][0]) {
+                        this.totalDict[_objAm.freqArray[key][0]] = _objAm.freqArray[key][1];
+                    }
                 }
             }
+            this.eval = true;
+        } else if(this.eval) {
+            console.log("done evaluating…");
         }
-
-        console.log(this.totalDict);
 
         // for(var key in Object.keys(_objOp.dictionary)) {
         //     if(this.totalDict.hasOwnProperty(key) || _objAm.dictionary.hasOwnProperty(key)) {
