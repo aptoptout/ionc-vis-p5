@@ -41,4 +41,11 @@ class wordOverlap {
     display() {
     
     }
+
+    compare(arr1,arr2) {
+        const finalarray =[];
+
+        arr1.foreach
+    }
+
 }
