@@ -2,7 +2,7 @@ class wordOverlap {
     constructor(_objAm, _objOp) {
         this.totalDict = {};
         this.sortedWordFreq = [];
-        this.eval = false;
+        this.eval = true;
         // this.amateurcitiesData = _objAm.freqArray;
         // this.openData          = _objOp.freqArray;
         // this.opensetData       = _objOpSe.freqArray;
