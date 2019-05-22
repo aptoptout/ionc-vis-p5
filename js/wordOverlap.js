@@ -9,7 +9,7 @@ class wordOverlap {
 
         for(var key in _objAm.freqArray) {
             for(var val in _objOp.freqArray) {
-                if(_objAm.freqArray[key][0] == _objOp.freqArray[val][0] || this.totalDict.hasOwnProperty(_objAm.freqArray[key][0])) {
+                if(_objAm.freqArray[key][0] == _objOp.freqArray[val][0]) {
                     this.totalDict[_objAm.freqArray[key][0]] = _objAm.freqArray[key][1];
                 }
             }
