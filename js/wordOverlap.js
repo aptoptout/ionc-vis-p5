@@ -1,7 +1,7 @@
 class wordOverlap {
     constructor(_objAm, _objOp) {
         this.totalDict = {};
-        this.sortedWordFreq;
+        this.sortedWordFreq = [];
         // this.amateurcitiesData = _objAm.freqArray;
         // this.openData          = _objOp.freqArray;
         // this.opensetData       = _objOpSe.freqArray;
@@ -13,7 +13,7 @@ class wordOverlap {
             }
         }
 
-        console.log(_objAm.dictionary);
+        console.log(this.totalDict);
 
         for(var key in Object.keys(_objOp.dictionary)) {
             if(this.totalDict.hasOwnProperty(key) || _objAm.dictionary.hasOwnProperty(key)) {
@@ -21,7 +21,7 @@ class wordOverlap {
             }
         }
 
-        console.log(_objAm.dictionary);
+        console.log(this.totalDict);
 
         for(var word in this.totalDict) {
             this.sortedWordFreq.push([word, this.totalDict[word]]);
